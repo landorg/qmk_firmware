@@ -17,6 +17,8 @@
 
 #include "quantum.h"
 
+#define LAYOUT_65_ansi_blocker_split_bs_split_space KEYMAP_rolandg
+
 /* This a shortcut to help you visually see your layout.
  *
  * The first section contains all of the arguments representing the physical
