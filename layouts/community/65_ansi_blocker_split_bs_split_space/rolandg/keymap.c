@@ -58,11 +58,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * `----------------------------------------------------------------'
 */
 [1] = LAYOUT_65_ansi_blocker_split_bs_split_space(
-    KC_GRAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,     KC_F10, KC_F11,  KC_F12,  _______, _______, KC_PSCR,
-    RESET,    _______, _______, KC_VOLD, KC_VOLU, _______, _______, US_UDIA, _______, US_ODIA,  _______, _______, _______,          _______, _______,
-    _______,  US_ADIA,   US_SS, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, _______,          _______,          _______,
-    _______,           RGB_TOG, _______, _______, _______, _______, _______, _______, _______,  _______, _______, KC_CAPS,          KC_PGUP, _______,
-    _______,  _______, _______,          _______,          _______,          _______,           _______, KC_RALT,          KC_HOME, KC_PGDN, KC_END)
+    KC_GRAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,     KC_F10, KC_F11,   KC_F12,  _______, _______, KC_PSCR,
+    RESET,    _______, _______, KC_VOLD, KC_VOLU, _______, _______, US_UDIA, _______, US_ODIA,  _______, _______,  _______,          _______, _______,
+    _______,  US_ADIA,   US_SS, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, KC_GRAVE,          _______,          _______,
+    _______,           RGB_TOG, _______, _______, _______, _______, _______, _______, _______,  _______, _______,  KC_CAPS,          KC_PGUP, _______,
+    _______,  _______, _______,          _______,          _______,          _______,           _______, KC_RALT,           KC_HOME, KC_PGDN, KC_END)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
