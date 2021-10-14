@@ -81,9 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [2] = LAYOUT_65_ansi_blocker_split_space(
       KC_GRAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,     KC_F10, KC_F11,   KC_F12,            KC_DEL, KC_PSCR,
-      RESET,    _______, _______, KC_VOLD, KC_VOLU, _______, _______, US_UDIA, _______, US_ODIA,  _______, _______,  _______,          _______,   TG(1),
+      RESET,    _______, _______, KC_VOLD, KC_VOLU, _______, _______, US_UDIA, _______, US_ODIA,     KC_P, _______,  _______,          _______,   TG(1),
       _______,  US_ADIA,   US_SS, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, KC_GRAVE,          _______,          _______,
-      _______,           RGB_TOG, _______, _______, _______, _______, _______, _______, _______,  _______, _______,  KC_CAPS,          KC_PGUP, _______,
+      _______,           RGB_TOG, KC_MNXT, KC_MPRV, _______, _______, _______, _______, _______,  _______, _______,  KC_CAPS,          KC_PGUP, _______,
       _______,  _______, _______,          _______,          _______,          _______,           _______, KC_RALT,           KC_HOME, KC_PGDN, KC_END
   ),
 
