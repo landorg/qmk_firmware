@@ -1,5 +1,3 @@
-#include "config_common.h"
-
 #define RGBLIGHT_SLEEP
 
 #undef RGBLIGHT_ANIMATIONS
