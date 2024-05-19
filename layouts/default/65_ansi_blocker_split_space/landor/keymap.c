@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,  KC_W,    KC_E,    KC_R,    KC_T,  KC_Y,    KC_U, KC_I,   KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_BSLS, KC_END,
       TT(2),   KC_A,  KC_S,    KC_D,    KC_F,    KC_G,  KC_H,    KC_J, KC_K,   KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,           KC_PGUP,
       KC_LSFT,        KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,    KC_N, KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,   KC_PGDN,
-      KC_LCTL, MO(2), KC_LALT,          KC_BSPC,        KC_LGUI,       KC_SPC,          MO(2),   KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
+      KC_LCTL, MO(2), KC_LALT,          KC_BSPC,        KC_LGUI,       KC_SPC,          MO(2),   KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT
   ),
 
   /* Keymap (Gaming Layer)
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,  KC_W,    KC_E, KC_R,   KC_T, KC_Y,    KC_U, KC_I,   KC_O,    KC_P,    KC_LBRC, KC_RBRC,          KC_BSLS,   TG(1),
       TT(2),   KC_A,  KC_S,    KC_D, KC_F,   KC_G, KC_H,    KC_J, KC_K,   KC_L,    KC_SCLN, KC_QUOT,           KC_ENT,          _______,
       KC_LSFT,        KC_Z,    KC_X, KC_C,   KC_V, KC_B,    KC_N, KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,   QK_LOCK,
-      KC_LCTL, MO(2), KC_LALT,       KC_SPC,       KC_LGUI,       KC_SPC,          MO(2),   KC_RCTL,          KC_LEFT, KC_DOWN, KC_RGHT
+      KC_LCTL, MO(2), KC_LALT,       KC_SPC,       KC_LGUI,       KC_SPC,          MO(2),   KC_RALT,          KC_LEFT, KC_DOWN, KC_RGHT
   ),
 
   /* Keymap Fn Layer
@@ -81,8 +81,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [2] = LAYOUT_65_ansi_blocker_split_space(
       KC_GRAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,     KC_F10, KC_F11,   KC_F12,            KC_DEL, KC_PSCR,
-      QK_RBT,   _______, _______, KC_VOLD, KC_VOLU, _______, _______, US_UDIA, _______, US_ODIA,  _______, _______,  _______,          _______,   TG(1),
-      _______,  US_ADIA,   US_SS, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, KC_GRAVE,          _______,          _______,
+      QK_BOOT,  _______, _______, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______,  _______, _______,  _______,          _______,   TG(1),
+      _______,  _______, _______, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______, KC_GRAVE,          _______,          _______,
       _______,           RGB_TOG, _______, KC_MPRV, KC_MNXT, _______, _______, _______, _______,  _______, _______,  KC_CAPS,          KC_PGUP, _______,
       _______,  _______, _______,          _______,          _______,          _______,           _______, KC_RALT,           KC_HOME, KC_PGDN, KC_END
   ),
@@ -91,21 +91,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case QMKBEST:
-      if (record->event.pressed) {
-        // when keycode QMKBEST is pressed
-        SEND_STRING("QMK is the best thing ever!");
-      } else {
-        // when keycode QMKBEST is released
-      }
-      break;
-    case QMKURL:
-      if (record->event.pressed) {
-        // when keycode QMKURL is pressed
-        SEND_STRING("https://qmk.fm/" SS_TAP(X_ENTER));
-      } else {
-        // when keycode QMKURL is released
-      }
+    case RCTL_T(KC_RALT):
+        if (record->tap.count && record->event.pressed) {
+            tap_code16_delay(KC_RALT, 2000); // Intercept tap function to send Ctrl-C
+            return false;
+        }
+        return true;
       break;
   }
   return true;
