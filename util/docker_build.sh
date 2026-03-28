@@ -81,5 +81,9 @@ fi
 	-e ALT_GET_KEYBOARDS=true \
 	-e SKIP_GIT="$SKIP_GIT" \
 	-e MAKEFLAGS="$MAKEFLAGS" \
+    -e MIRYOKU_ALPHAS=QWERTY \
+    -e MIRYOKU_NAV=VI \
+    -e MIRYOKU_MOUSE=VI \
+    -e MIRYOKU_MEDIA=VI \
 	ghcr.io/qmk/qmk_cli \
 	make "$keyboard${keymap:+:$keymap}${target:+:$target}"
