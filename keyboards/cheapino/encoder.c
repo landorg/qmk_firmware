@@ -16,12 +16,20 @@ void clicked(void) {
 }
 
 void turned(bool clockwise) {
-    if (IS_LAYER_ON(6)) {
-        tap_code(clockwise ? KC_VOLU : KC_VOLD);
-    } else if (IS_LAYER_ON(3)) {
+    // layers:
+    // thumbkey: layer-nr
+    // 1: 6
+    // 2: 4
+    // 3: 5
+    // 4: 8
+    // 5: 7
+    // 6: 9
+    if (IS_LAYER_ON(6) || IS_LAYER_ON(8)) {
+        tap_code(clockwise ? KC_VOLD : KC_VOLU);
+    } else if (IS_LAYER_ON(4) || IS_LAYER_ON(7)) {
         tap_code16(clockwise ? KC_PGDN : KC_PGUP);
-    } else if (IS_LAYER_ON(5)) {
-        tap_code16(clockwise ? LGUI(KC_Y) : LGUI(KC_Z));
+    } else if (IS_LAYER_ON(5) || IS_LAYER_ON(9)) {
+        tap_code16(clockwise ? KC_LEFT : KC_RIGHT);
     } else {
         tap_code16(clockwise ? KC_DOWN : KC_UP);
     }
