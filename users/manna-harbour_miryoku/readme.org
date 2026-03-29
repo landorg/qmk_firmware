@@ -817,6 +817,6 @@ For [[#workflow-builds][workflow builds]], use the Build Inputs workflow and bui
 Also see [[https://github.com/manna-harbour/miryoku_kmonad][Miryoku KMonad]].
 
 
-** 
+**
 
 [[https://github.com/manna-harbour][https://raw.githubusercontent.com/manna-harbour/miryoku/master/data/logos/manna-harbour-boa-32.png]]
