@@ -6,7 +6,11 @@
 const aw20216s_led_t PROGMEM g_aw20216s_leds[AW20216S_LED_COUNT] = {
 /* Each AW20216 channel is controlled by a register at some offset between 0x00
  * and 0xD7 inclusive.
+<<<<<<< variant A
  * See drivers/led/aw20216s.h for the mapping between register offsets and
+>>>>>>> variant B
+ * See drivers/awinic/aw20216.h for the mapping between register offsets and
+======= end
  * driver pin locations.
  *   driver
  *   |  R location
