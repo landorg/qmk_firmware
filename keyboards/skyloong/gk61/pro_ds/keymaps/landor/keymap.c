@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------.
    * | ` |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Del|
    * |-----------------------------------------------------|
-   * |Reset|   |   | V-| V+|   |   |   |   |   |Prnt|   |   |Game|
+   * |Reset|Tog|Nxt| V-| V+|Hue-|Hue+|Sat-|Sat+|Val-|Prnt|Val+|   |Game|
    * |-----------------------------------------------------|
    * |      |   |   |Ply|Mut|   |Lft|Dow| Up|Rgt|   | ` |    |
    * |-----------------------------------------------------|
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [_FN] = LAYOUT_60_ansi_split_space(
       KC_GRAVE, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10, KC_F11,          KC_F12,  KC_DEL,
-      QK_BOOT,  _______, _______, KC_VOLD, KC_VOLU, _______, _______, _______, _______, _______, KC_PSCR, _______,         _______, TG(_GAMING),
+      QK_BOOT,  RM_TOGG, RM_NEXT, KC_VOLD, KC_VOLU, RM_HUED, RM_HUEU, RM_SATD, RM_SATU, RM_VALD, KC_PSCR, RM_VALU,         _______, TG(_GAMING),
       _______,  _______, _______, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, _______, KC_GRAVE,        _______,
       _______,           _______, _______, KC_MPRV, KC_MNXT, _______, _______, _______, _______, _______, _______,         KC_CAPS,
       _______,  _______, _______,          _______,          _______,          OSM(MOD_RALT),                      _______, QK_LOCK,   _______
