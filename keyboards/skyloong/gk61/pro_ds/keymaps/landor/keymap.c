@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------|
    * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Sft/Up|
    * |-----------------------------------------------------|
-   * |Ctl|Gui|Alt| Spc/FNL  | Spc/FNR  |AGr|Fn/Lft|Gui/Dow|Ctl/Rgt|
+   * |Ctl|Gui|Alt| Spc/FNL  | Spc/FNR  |Fn|AGr/Lft|Gui/Dow|Ctl/Rgt|
    * `-----------------------------------------------------'
    */
   [_BASE] = LAYOUT_60_ansi_split_space(
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   KC_Q,               KC_W,               KC_E,               KC_R,                KC_T,    KC_Y,    KC_U,               KC_I,               KC_O,                 KC_P,                  KC_LBRC,  KC_RBRC,  KC_BSLS,
       TT(_FN),  MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LCTL, KC_D), MT(MOD_LSFT, KC_F),  KC_G,    KC_H,    MT(MOD_RSFT, KC_J), MT(MOD_RCTL, KC_K), MT(MOD_LALT, KC_L),   MT(MOD_RGUI, KC_SCLN), KC_QUOT,            KC_ENT,
       KC_LSFT,  KC_Z,               MT(MOD_RALT, KC_X), KC_C,               KC_V,                KC_B,    KC_N,    KC_M,               KC_COMM,            MT(MOD_RALT, KC_DOT), KC_SLSH,                        RSFT_T(KC_UP),
-      KC_LCTL,  KC_LGUI,            KC_LALT,            LT(_FNL, KC_SPC),                        LT(_FNR, KC_BSPC),                   OSM(MOD_RALT),            LT(_FN, KC_LEFT),   MT(MOD_LGUI, KC_DOWN),   RCTL_T(KC_RIGHT)
+      KC_LCTL,  KC_LGUI,            KC_LALT,            LT(_FNL, KC_SPC),                        LT(_FNR, KC_BSPC),                   MO(_FN),             RALT_T(KC_LEFT),         MT(MOD_LGUI, KC_DOWN),   RCTL_T(KC_RIGHT)
   ),
 
   /* Keymap (Gaming Layer)
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------|
    * |        |   |   |Prv|Nxt|   |   |   |   |   |   |Caps |
    * |-----------------------------------------------------|
-   * |    |    |     |         |         |AGr|   |Lock|    |
+   * |    |    |     |         |         |   |   |Lock|    |
    * `-----------------------------------------------------'
    */
   [_FN] = LAYOUT_60_ansi_split_space(
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       QK_BOOT,  RM_TOGG, RM_NEXT, KC_VOLD, KC_VOLU, RM_HUED, RM_HUEU, RM_SATD, RM_SATU, RM_VALD, KC_PSCR, RM_VALU,         _______, TG(_GAMING),
       _______,  _______, _______, KC_MPLY, KC_MUTE, _______, KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, _______, KC_GRAVE,        _______,
       _______,           _______, _______, KC_MPRV, KC_MNXT, _______, _______, _______, _______, _______, _______,         KC_CAPS,
-      _______,  _______, _______,          _______,          _______,          OSM(MOD_RALT),                      _______, QK_LOCK,   _______
+      _______,  _______, _______,          _______,          _______,          _______,                            _______, QK_LOCK,   _______
   ),
 
   /* _FNL Layer
